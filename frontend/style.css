@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f6fa;
+}
+
+.card {
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.container {
+  max-width: 900px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+button {
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}

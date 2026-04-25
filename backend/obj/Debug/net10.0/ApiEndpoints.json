@@ -1,0 +1,49 @@
+[
+  {
+    "ContainingType": "ControleFinanceiro.API.Controllers.TransactionsController",
+    "Method": "GetTransactions",
+    "RelativePath": "api/Transactions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoria",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ControleFinanceiro.API.Controllers.TransactionsController",
+    "Method": "Post",
+    "RelativePath": "api/Transactions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "transaction",
+        "Type": "ControleFinanceiro.API.Models.Transaction",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ControleFinanceiro.API.Controllers.TransactionsController",
+    "Method": "GetBalance",
+    "RelativePath": "api/Transactions/balance",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Financeiro Pessoal</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container mt-5">
+
+  <h1 class="mb-4">Controle Financeiro</h1>
+
+  <!-- FORMULÁRIO -->
+  <div class="card p-3 mb-4">
+    <h4>Adicionar Transação</h4>
+    <form id="form" class="row g-2">
+      
+      <select class="form-control" id="tipo" required>
+        <option value="">Selecione</option>
+        <option value="ganho">Ganho</option>
+        <option value="despesa">Despesa</option>
+        </select>
+
+      <div class="col-md-3">
+        <input class="form-control" type="text" id="categoria" placeholder="Categoria" required>
+      </div>
+
+      <div class="col-md-3">
+        <input class="form-control" type="number" id="quantidade" placeholder="Valor" required>
+      </div>
+
+      <div class="col-md-3">
+        <button class="btn btn-primary w-100" type="submit">Adicionar</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- SALDO -->
+<div class="row text-center">
+  <div class="col-md-4">
+    <div class="card p-2 bg-success text-white">
+      <h5>Ganhos</h5>
+      <p id="ganhos"></p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card p-2 bg-danger text-white">
+      <h5>Despesas</h5>
+      <p id="despesas"></p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card p-2 bg-dark text-white">
+      <h5>Saldo</h5>
+      <p id="saldo"></p>
+    </div>
+  </div>
+</div>
+
+  <!-- LISTA -->
+  <div class="card p-3">
+    <h4>Transações</h4>
+    <ul id="lista" class="list-group"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
