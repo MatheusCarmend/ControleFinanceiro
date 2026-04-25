@@ -3,6 +3,7 @@ Controle Financeiro (Dashboard Financeiro)
 Aplicação full stack para gerenciamento financeiro, permitindo o registro de ganhos e despesas, cálculo automático de saldo e visualização das transações.
 
 Tecnologias utilizadas:
+
 🔹 Back-end
 * C#
 * .NET / ASP.NET Core
