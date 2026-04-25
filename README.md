@@ -9,7 +9,7 @@ Tecnologias utilizadas:
 * .NET / ASP.NET Core
 * Entity Framework Core
 * SQL Server
-* 
+  
 🔹 Front-end
 * HTML
 * CSS
