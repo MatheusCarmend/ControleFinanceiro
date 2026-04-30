@@ -16,11 +16,13 @@ Tecnologias utilizadas:
 * JavaScript
 
 Funcionalidades:
-Cadastro de transações (ganhos e despesas)
-Cálculo automático de saldo
-Listagem de transações
-Organização por tipo (ganho/despesa)
-Interface simples e funcional
+- Cadastro de transações (ganhos e despesas)
+- Cálculo automático de saldo
+- Listagem de transações
+- Organização por tipo (ganho/despesa)
+- Interface simples e funcional
+- Exclusão individual de transações
+- Limpeza de todas as transações com confirmação
 
 
 Sobre o projeto:
@@ -63,9 +65,7 @@ https://localhost:7133/api/transactions
 ```
 
 Melhorias futuras:
-🔍 Filtros por categoria
 📅 Filtro por data
-🗑️ Exclusão de transações
 ✏️ Edição de transações
 🔐 Autenticação de usuários
 
