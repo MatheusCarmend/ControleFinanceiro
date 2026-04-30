@@ -69,5 +69,30 @@ namespace ControleFinanceiro.API.Controllers
                 balance = ganho - despesa
             });
         }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteTransaction(int id)
+        {
+            var transaction = _context.Transactions.Find(id);
+
+            if (transaction == null)
+            {
+                return NotFound();
+            }
+
+            _context.Transactions.Remove(transaction);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+        [HttpDelete]
+        public IActionResult DeleteAllTransactions()
+        {
+            var transactions = _context.Transactions.ToList();
+
+            _context.Transactions.RemoveRange(transactions);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
     }
 }

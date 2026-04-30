@@ -20,7 +20,7 @@ form.addEventListener("submit", async (e) => {
   const tipo = document.getElementById("tipo").value;
   const categoria = document.getElementById("categoria").value;
   const quantidade = parseFloat(document.getElementById("quantidade").value);
-  if (!tipo || !categoria || !valor) {
+  if (!tipo || !categoria || !quantidade){
     alert("Preencha todos os campos!");
     return;
 }
@@ -46,20 +46,24 @@ async function carregarTransacoes() {
   lista.innerHTML = "";
 
   data.forEach(t => {
-    const li = document.createElement("li");
-    li.classList.add("list-group-item");
+  const li = document.createElement("li");
+  li.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
 
-    li.classList.add("list-group-item", "d-flex", "justify-content-between");
+  li.innerHTML = `
+    <div>
+      <strong>${t.categoria}</strong>
+      <span class="${t.tipo === 'ganho' ? 'text-success' : 'text-danger'}">
+        ${t.tipo === 'ganho' ? '+' : '-'} ${formatar(t.quantidade)}
+      </span>
+    </div>
 
-    li.innerHTML = `
-        <span>${t.categoria}</span>
-        <span class="${t.tipo === 'ganho' ? 'text-success' : 'text-danger'}">
-            ${t.tipo === 'ganho' ? '+' : '-'} ${formatar(t.quantidade)}
-        </span>
-    `;
+    <button class="btn btn-sm btn-outline-danger" onclick="deletarTransacao(${t.id})">
+      Excluir
+    </button>
+  `;
 
-    lista.appendChild(li);
-  });
+  lista.appendChild(li);
+});
 }
 
 // saldo
@@ -70,4 +74,25 @@ async function carregarSaldo() {
     document.getElementById("ganhos").textContent = formatar(data.ganhoTotal);
     document.getElementById("despesas").textContent = formatar(data.despesaTotal);
     document.getElementById("saldo").textContent = formatar(data.balance);
+}
+async function deletarTransacao(id) {
+  await fetch(`${API_URL}/${id}`, {
+    method: "DELETE"
+  });
+
+  carregarTransacoes();
+  carregarSaldo();
+}
+async function limparTudo() {
+
+  const confirmar = confirm("Tem certeza que deseja apagar todas as transações?");
+
+  if (!confirmar) return;
+
+  await fetch(API_URL, {
+    method: "DELETE"
+  });
+
+  carregarTransacoes();
+  carregarSaldo();
 }
